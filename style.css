@@ -1,0 +1,109 @@
+html, body {
+  height: 100%;
+  background-color: #f0f0f0;
+  margin: 0 ;     /* 左右中央寄せ */
+}
+
+.wrapper {
+  max-width: 480px;
+  margin: 0 auto;        /* 左右中央寄せ */
+  text-align: center;    /* テキスト・img中央寄せ */
+  background-color: #fff;
+}
+
+.wrapper img{
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100px;  /* バナー高さ */
+   z-index: 1000;
+  display: flex;
+  justify-content: center;  /* 中央配置 */
+  align-items: center;
+}
+
+/* 画像リンク */
+.header-banner img {
+  width: 480px;        /* ← 親要素に合わせる */
+  height: 100%;
+  object-fit: cover;  /* はみ出さずにトリミング */
+  display: block;
+}
+
+/* 下のコンテンツが隠れないように */
+main {
+  padding-top: 100px;
+}
+
+.header-banner img {
+  transition: opacity 0.2s ease;
+}
+
+.header-banner:hover img {
+  opacity: 0.8;
+}
+
+
+.first-section{
+  padding-top: 0px;
+}
+
+.narration1{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #f0f0f0;
+  background-color: #303030;
+}
+.arrow-down {
+  line-height: 0.1;
+  color: #333;
+  animation: bounce 1.5s infinite;
+}
+
+.button img {
+  animation: bounce 1.5s infinite;
+  transition: opacity 0.2s ease; /* なめらかに */
+}
+
+.button:hover img {
+  animation-play-state: paused;
+  opacity: 0.6;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+.footer{
+  margin-top: 30px;
+}
+
+.red{
+  color:#ff0000;
+}
+
+.bulle{
+  color: #0004ff;
+}
+
+/* ===== 小さめスマホ ===== */
+@media screen and (max-width: 480px) {
+ .site-header {
+  position: fixed;
+  top: 5px;
+ }
+}
